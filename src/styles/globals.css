@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cacher la barre de défilement tout en gardant la fonctionnalité */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Style pour le défilement fluide */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Styles pour l'éditeur de texte riche */
+.ProseMirror {
+  > * + * {
+    margin-top: 0.75em;
+  }
+
+  ul,
+  ol {
+    padding: 0 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  h1 { font-size: 2em; margin-top: 1em; }
+  h2 { font-size: 1.5em; margin-top: 0.83em; }
+  h3 { font-size: 1.17em; margin-top: 1em; }
+
+  code {
+    background-color: rgba(#616161, 0.1);
+    color: #616161;
+    padding: 0.25em;
+    border-radius: 0.25em;
+  }
+
+  pre {
+    background: #0D0D0D;
+    color: #FFF;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    
+    code {
+      color: inherit;
+      padding: 0;
+      background: none;
+      font-size: 0.8rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(#0D0D0D, 0.1);
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid rgba(#0D0D0D, 0.1);
+    margin: 2rem 0;
+  }
+}
+
+/* App Card Styles */
+.app-card {
+  @apply bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-all duration-200;
+}
+
+.app-card:hover {
+  transform: translateY(-2px);
+}
+
+.app-card .app-image {
+  @apply relative aspect-video;
+  background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+}
+
+.app-card .app-info {
+  @apply p-4;
+}
+
+.app-card .app-title {
+  @apply font-semibold text-gray-900 mb-1;
+}
+
+.app-card .app-meta {
+  @apply flex items-center text-xs text-gray-500 mt-2;
+}
+
+.app-card .app-meta > * + * {
+  @apply ml-2;
+}
+
+/* Section Headers */
+.section-header {
+  @apply flex justify-between items-center mb-6;
+}
+
+.section-title {
+  @apply text-xl font-bold text-gray-900;
+}
+
+.view-all-link {
+  @apply text-green-600 hover:text-green-700 text-sm font-medium transition-colors;
+}
+
+/* Grid Layout */
+.apps-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Category Links */
+.category-link {
+  @apply px-4 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200;
+  @apply text-gray-700 hover:text-gray-900 text-sm;
+}
+
+.category-link:hover {
+  transform: translateY(-1px);
+}
+
+.category-grid {
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3;
+  @apply mt-4;
+}
+
+/* Category Section */
+.categories-section {
+  @apply mt-12 mb-8;
+  @apply border-t border-gray-200 pt-12;
+}
+
+.categories-title {
+  @apply text-xl font-bold text-gray-900 mb-6;
+}
+
+.categories-container {
+  @apply flex flex-wrap gap-3;
+}
