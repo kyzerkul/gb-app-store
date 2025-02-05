@@ -80,34 +80,157 @@
   }
 }
 
-/* App Card Styles */
-.app-card {
-  @apply bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-all duration-200;
+@layer base {
+  body {
+    @apply bg-krapk-background text-krapk-text;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-krapk-text font-bold;
+  }
 }
 
-.app-card:hover {
-  transform: translateY(-2px);
+@layer components {
+  /* Header styles */
+  .header {
+    @apply bg-krapk-primary text-white shadow-md;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-krapk-accent text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity;
+  }
+
+  .btn-secondary {
+    @apply bg-krapk-secondary text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity;
+  }
+
+  .btn-download {
+    @apply bg-krapk-accent text-white flex items-center justify-center gap-2 
+           px-6 py-3 rounded-lg hover:opacity-90 transition-opacity 
+           text-lg font-medium;
+  }
+
+  /* Card styles */
+  .app-card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-4;
+  }
+
+  /* Info section styles */
+  .info-section {
+    @apply bg-krapk-info-bg border border-krapk-info-text rounded-lg p-4;
+  }
+
+  /* Social buttons */
+  .social-btn {
+    @apply rounded-full p-2.5 text-white transition-all hover:scale-110;
+  }
+
+  .social-btn.facebook {
+    @apply bg-[#1877F2];
+  }
+
+  .social-btn.x {
+    @apply bg-black;
+  }
+
+  .social-btn.linkedin {
+    @apply bg-[#0A66C2];
+  }
+
+  .social-btn.email {
+    @apply bg-[#EA4335];
+  }
+
+  /* Star rating */
+  .star-rating {
+    @apply flex items-center gap-1;
+  }
+
+  .star-rating button {
+    @apply p-0.5;
+  }
+
+  .star-rating svg {
+    @apply w-6 h-6 transition-colors;
+  }
+
+  .star-rating .star-filled {
+    @apply text-yellow-400;
+  }
+
+  .star-rating .star-empty {
+    @apply text-gray-300;
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    @apply text-white hover:text-opacity-90 transition-opacity;
+  }
+
+  /* Category styles */
+  .category-link {
+    @apply bg-white text-krapk-text hover:bg-krapk-primary hover:text-white 
+           transition-colors duration-200 px-4 py-2 rounded-lg shadow-sm;
+  }
+
+  /* Form styles */
+  .form-input {
+    @apply border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 
+           focus:ring-krapk-primary focus:border-transparent outline-none;
+  }
+
+  .form-label {
+    @apply text-krapk-text font-medium mb-1 block;
+  }
+
+  /* Rich text editor */
+  .rich-text-editor {
+    @apply border border-gray-300 rounded-lg overflow-hidden;
+  }
+
+  .rich-text-toolbar {
+    @apply bg-krapk-info-bg border-b border-krapk-info-text p-2 flex flex-wrap gap-2;
+  }
+
+  .editor-btn {
+    @apply p-2 rounded hover:bg-krapk-primary hover:text-white transition-colors;
+  }
+
+  .editor-btn.active {
+    @apply bg-krapk-primary text-white;
+  }
+
+  /* App info styles */
+  .app-info-section {
+    @apply bg-white rounded-lg shadow-sm p-6 space-y-6;
+  }
+
+  .app-info-row {
+    @apply flex items-center gap-6;
+  }
+
+  .app-info-label {
+    @apply text-krapk-text/60 w-32;
+  }
+
+  .app-info-icon {
+    @apply w-6 h-6 text-krapk-accent mb-2;
+  }
+
+  .app-info-value {
+    @apply font-medium;
+  }
 }
 
-.app-card .app-image {
-  @apply relative aspect-video;
-  background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+/* App grid layout */
+.apps-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
 }
 
-.app-card .app-info {
-  @apply p-4;
-}
-
-.app-card .app-title {
-  @apply font-semibold text-gray-900 mb-1;
-}
-
-.app-card .app-meta {
-  @apply flex items-center text-xs text-gray-500 mt-2;
-}
-
-.app-card .app-meta > * + * {
-  @apply ml-2;
+/* Categories grid */
+.categories-grid {
+  @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4;
 }
 
 /* Section Headers */
