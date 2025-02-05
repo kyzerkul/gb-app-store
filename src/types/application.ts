@@ -13,4 +13,6 @@ export interface Application {
   category?: string;
   is_featured?: boolean;
   is_editors_choice?: boolean;
+  rating: number;
+  votes_count: number;
 }

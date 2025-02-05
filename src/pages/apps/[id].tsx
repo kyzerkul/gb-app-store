@@ -185,7 +185,10 @@ export default function ApplicationPage() {
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
           <div className="flex flex-wrap items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <StarRating rating={app.rating} />
+              <StarRating 
+                initialRating={app.rating} 
+                readOnly={true}
+              />
               <span className="text-sm text-gray-500">({app.votes_count} notes)</span>
             </div>
             
